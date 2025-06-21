@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, jsonify  # Import jsonify
+from flask import Flask, request, render_template, jsonify  # Import jsofrom flask import Flask, render_template, request
 import numpy as np
 import pandas as pd
 import pickle
@@ -148,5 +148,6 @@ def blog():
 
 
 if __name__ == '__main__':
-
-    app.run(debug=True)
+    import os
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=False)
